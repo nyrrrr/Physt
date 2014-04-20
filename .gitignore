@@ -1,0 +1,5 @@
+# Construct 2 stuff
+**/*.uistate*
+**/*.capx*
+**/*.autosave
+**/*.backup*
