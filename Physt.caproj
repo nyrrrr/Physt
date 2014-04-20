@@ -212,6 +212,11 @@
         </object-type>
         <object-type name="HS" sid="4619031460382661">
             <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="3778089160623905">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
         </object-type>
     </object-folder>
     <families />

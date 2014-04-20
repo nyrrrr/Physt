@@ -189,7 +189,7 @@
                         <condition id="1" name="On any key pressed" sid="9555523054756936" type="Keyboard" />
                         <condition id="-7" name="Compare instance variable" sid="704907536759421" type="hero">
                             <param id="0" name="Instance variable">health</param>
-                            <param id="1" name="Comparison">0</param>
+                            <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
@@ -203,7 +203,7 @@
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="4412914384630491" type="hero">
                             <param id="0" name="Instance variable">health</param>
-                            <param id="1" name="Comparison">0</param>
+                            <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
