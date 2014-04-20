@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Score" sid="3212068096693536" static="0" type="number">0</variable>
+        <event-block sid="7012902274677262">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6824104663239057" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="831568887966504" type="hand">
+                    <param id="0" name="Pin to">hero</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-36" name="Save" sid="7456780811802137" type="System">
+                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6838160128309032">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="2220617903096439" type="WebStorage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6801561607675013" type="WebStorage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group collapsed="1" description="" sid="6392012209084126" title="Shooting">
+            <sub-events>
+                <event-block sid="9328967208045475">
+                    <conditions>
+                        <condition behavior="Pin" id="0" name="Is pinned" sid="8124541573755112" type="hand" />
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="4285804701842712" type="hand">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3520739589201597">
+                            <conditions>
+                                <condition id="0" name="On click" sid="8794929957205026" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="1" name="Unpin" sid="6544353729012895" type="hand" />
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="9190153700996837" type="hand">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Timer2" id="0" name="Start timer" sid="8933773613422447" type="hand">
+                                    <param id="0" name="Duration">3.0</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;shootDuration&quot;</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="3838222159663083" type="hand">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3109055685695822" type="hand">
+                                    <param id="0" name="Instance variable">goesBack</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7742541144461919">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="9457046181620788" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="7550966340998663" type="hand">
+                            <param id="0" name="Instance variable">goesBack</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2367169044826744">
+                    <conditions>
+                        <condition behavior="Timer2" id="0" name="On timer" sid="417823052234208" type="hand">
+                            <param id="0" name="Tag">&quot;shootDuration&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="8190039176624653" type="hand">
+                            <param id="0" name="Instance variable">goesBack</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6084930693609691">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="869035187373247" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1426346599449296" type="hand">
+                            <param id="0" name="Instance variable">goesBack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="6449196728705133" type="hand">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4888461170739408">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="473261890937037" type="hand">
+                            <param id="0" name="Instance variable">goesBack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="8730749530577189" type="hand">
+                            <param id="0" name="X">hero.X</param>
+                            <param id="1" name="Y">hero.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9099551550371331">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="1501496544162581" type="hand">
+                                    <param id="0" name="Object">hero</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="360982217644486" type="hand">
+                                    <param id="0" name="Instance variable">goesBack</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="3051866831545475" type="hand">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="4557738147714634" type="hand">
+                                    <param id="0" name="Pin to">hero</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7502275591589859" title="Damage">
+            <sub-events>
+                <event-block sid="7022971468179558">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8663373402366878" type="enemy">
+                            <param id="0" name="Object">hero</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5159809768587692" type="enemy">
+                            <param id="0" name="Instance variable">canAttack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2152047576275627" type="hero">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="1709162152022302" type="hero">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.2</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="2596110548275176" type="enemy">
+                            <param id="0" name="Instance variable">canAttack</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="5131841432571748" type="enemy">
+                            <param id="0" name="Duration">1</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;attacktimer&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1977339525445642">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="9555523054756936" type="Keyboard" />
+                        <condition id="-7" name="Compare instance variable" sid="704907536759421" type="hero">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-37" name="Load" sid="2507463651735548" type="System">
+                            <param id="0" name="Slot">&quot;mysave&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5275694696464395">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4412914384630491" type="hero">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="8701145123284832" type="Text">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="2914329354128937" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="8469714481576501" type="HS">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3245900053144304" type="HS">
+                            <param id="0" name="Text">&quot;Highscore: &quot; &amp; WebStorage.LocalValue(&quot;Highscore&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8962397339523527">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="2563969937951093" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Highscore&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">Score</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="6119824264578651" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Highscore&quot;</param>
+                                    <param id="1" name="Value">Score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="710390248572618">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7183248190877136" type="hand">
+                            <param id="0" name="Object">enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="10" name="Push out solid" sid="393469378050644" type="hand">
+                            <param id="0" name="Direction">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="8478270617336649" type="enemy">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.2</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="1750894219704868" type="enemy">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3420210299607512" type="hand">
+                            <param id="0" name="Instance variable">goesBack</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="8741202054864466" type="enemy">
+                            <param id="0" name="Instance variable">canAttack</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="2368718839508242" type="enemy">
+                            <param id="0" name="Duration">1</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;attacktimer&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8769937451221864">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3538920403918755" type="enemy">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="4189247672158692" type="enemy" />
+                                <action id="-10" name="Add to" sid="4660789597633969" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="6229556960928736" type="score">
+                                    <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3995737576619985" title="AI">
+            <sub-events>
+                <event-block sid="9209215825858468">
+                    <conditions>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="5228679691684148" type="enemy" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="4348017902851058" type="enemy">
+                            <param id="0" name="Instance variable">canAttack</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="5474564742304826" type="enemy">
+                            <param id="0" name="X">hero.X</param>
+                            <param id="1" name="Y">hero.Y</param>
+                        </action>
+                        <action id="-23" name="Move at angle" sid="2848482318424433" type="enemy">
+                            <param id="0" name="Angle">Self.Angle</param>
+                            <param id="1" name="Distance">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7109242546337769">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="454549933769362" type="enemy">
+                            <param id="0" name="Tag">&quot;attacktimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="5308247026329083" type="enemy">
+                            <param id="0" name="Instance variable">canAttack</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="8131948627658152" title="Moar Controls">
+            <sub-events>
+                <event-block sid="9680383298334386">
+                    <conditions>
+                        <condition id="5" name="Key code is down" sid="2281686832091594" type="Keyboard">
+                            <param id="0" name="Keycode">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="5203046674302692" type="hero">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8483946269655905">
+                    <conditions>
+                        <condition id="5" name="Key code is down" sid="5482059912452047" type="Keyboard">
+                            <param id="0" name="Keycode">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="7643585204483114" type="hero">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7491567555065194">
+                    <conditions>
+                        <condition id="5" name="Key code is down" sid="6599039295090836" type="Keyboard">
+                            <param id="0" name="Keycode">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="9463407464321681" type="hero">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9666780524469286">
+                    <conditions>
+                        <condition id="5" name="Key code is down" sid="713884104444503" type="Keyboard">
+                            <param id="0" name="Keycode">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="4938265172719941" type="hero">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="3868583392467948">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3616495808228419" type="enemy">
+                    <param id="0" name="Object">enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="10" name="Push out solid" sid="8159817119119264" type="enemy">
+                    <param id="0" name="Direction">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
