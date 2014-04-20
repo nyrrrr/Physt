@@ -221,23 +221,6 @@
                             <param id="0" name="Text">&quot;Highscore: &quot; &amp; WebStorage.LocalValue(&quot;Highscore&quot;)</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="8962397339523527">
-                            <conditions>
-                                <condition id="7" name="Compare key value (as number)" sid="2563969937951093" type="WebStorage">
-                                    <param id="0" name="Key">&quot;Highscore&quot;</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">Score</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set local value" sid="6119824264578651" type="WebStorage">
-                                    <param id="0" name="Key">&quot;Highscore&quot;</param>
-                                    <param id="1" name="Value">Score</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="710390248572618">
                     <conditions>
@@ -291,6 +274,23 @@
                                     <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="8962397339523527">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="2563969937951093" type="WebStorage">
+                                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">Score</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set local value" sid="6119824264578651" type="WebStorage">
+                                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                                            <param id="1" name="Value">Score</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
