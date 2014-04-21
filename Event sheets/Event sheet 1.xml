@@ -296,7 +296,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="3995737576619985" title="AI">
+        <event-group collapsed="1" description="" sid="3995737576619985" title="AI">
             <sub-events>
                 <event-block sid="9209215825858468">
                     <conditions>
@@ -326,6 +326,18 @@
                         <action id="-13" name="Set boolean" sid="5308247026329083" type="enemy">
                             <param id="0" name="Instance variable">canAttack</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3868583392467948">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3616495808228419" type="enemy">
+                            <param id="0" name="Object">enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="10" name="Push out solid" sid="8159817119119264" type="enemy">
+                            <param id="0" name="Direction">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -383,17 +395,26 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="3868583392467948">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="3616495808228419" type="enemy">
-                    <param id="0" name="Object">enemy</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="CustomMovement" id="10" name="Push out solid" sid="8159817119119264" type="enemy">
-                    <param id="0" name="Direction">1</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group collapsed="1" description="" sid="2821588386881896" title="Enemy Generation">
+            <sub-events>
+                <event-block sid="7246876501838843">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="8500421934669825" type="System">
+                            <param id="0" name="Interval (seconds)">random(0.5,2)</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="3954322035125313" type="System">
+                            <param id="0" name="Object">Sprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="4704001551159674" type="Sprite">
+                            <param id="0" name="Object">enemy</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
