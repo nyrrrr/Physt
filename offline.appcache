@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1397962580
+#1398077774
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -7,6 +7,7 @@ images\tiledbackground.png
 images\hero-sheet0.png
 images\enemy-sheet0.png
 images\hand-sheet0.png
+images\sprite-sheet0.png
 icon-16.png
 icon-32.png
 icon-114.png
