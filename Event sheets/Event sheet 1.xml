@@ -395,12 +395,12 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="2821588386881896" title="Enemy Generation">
+        <event-group description="" sid="2821588386881896" title="Enemy Generation">
             <sub-events>
                 <event-block sid="7246876501838843">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="8500421934669825" type="System">
-                            <param id="0" name="Interval (seconds)">random(0.5,2)</param>
+                            <param id="0" name="Interval (seconds)">random(1,2)</param>
                         </condition>
                         <condition id="-16" name="Pick random instance" sid="3954322035125313" type="System">
                             <param id="0" name="Object">Sprite</param>
