@@ -9,7 +9,7 @@
                 <condition id="-2" name="On start of layout" sid="6824104663239057" type="System" />
             </conditions>
             <actions>
-                <action behavior="Pin" id="0" name="Pin to object" sid="831568887966504" type="hand">
+                <action behavior="Pin" id="0" name="Pin to object" sid="831568887966504" type="mjolnir">
                     <param id="0" name="Pin to">hero</param>
                     <param id="1" name="Mode">0</param>
                 </action>
@@ -33,14 +33,14 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-group collapsed="1" description="" sid="6392012209084126" title="Shooting">
+        <event-group description="" sid="6392012209084126" title="Shooting">
             <sub-events>
                 <event-block sid="9328967208045475">
                     <conditions>
-                        <condition behavior="Pin" id="0" name="Is pinned" sid="8124541573755112" type="hand" />
+                        <condition behavior="Pin" id="0" name="Is pinned" sid="8124541573755112" type="mjolnir" />
                     </conditions>
                     <actions>
-                        <action id="11" name="Set collisions enabled" sid="4285804701842712" type="hand">
+                        <action id="11" name="Set collisions enabled" sid="4285804701842712" type="mjolnir">
                             <param id="0" name="Collisions">0</param>
                         </action>
                     </actions>
@@ -53,21 +53,24 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Pin" id="1" name="Unpin" sid="6544353729012895" type="hand" />
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="9190153700996837" type="hand">
+                                <action behavior="Pin" id="1" name="Unpin" sid="6544353729012895" type="mjolnir" />
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="9190153700996837" type="mjolnir">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action behavior="Timer2" id="0" name="Start timer" sid="8933773613422447" type="hand">
+                                <action behavior="Timer2" id="0" name="Start timer" sid="8933773613422447" type="mjolnir">
                                     <param id="0" name="Duration">3.0</param>
                                     <param id="1" name="Type">0</param>
                                     <param id="2" name="Tag">&quot;shootDuration&quot;</param>
                                 </action>
-                                <action id="11" name="Set collisions enabled" sid="3838222159663083" type="hand">
+                                <action id="11" name="Set collisions enabled" sid="3838222159663083" type="mjolnir">
                                     <param id="0" name="Collisions">1</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="3109055685695822" type="hand">
+                                <action id="-13" name="Set boolean" sid="3109055685695822" type="mjolnir">
                                     <param id="0" name="Instance variable">goesBack</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="8044068177875705" type="mjolnir">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -80,7 +83,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="7550966340998663" type="hand">
+                        <action id="-13" name="Set boolean" sid="7550966340998663" type="mjolnir">
                             <param id="0" name="Instance variable">goesBack</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -88,12 +91,12 @@
                 </event-block>
                 <event-block sid="2367169044826744">
                     <conditions>
-                        <condition behavior="Timer2" id="0" name="On timer" sid="417823052234208" type="hand">
+                        <condition behavior="Timer2" id="0" name="On timer" sid="417823052234208" type="mjolnir">
                             <param id="0" name="Tag">&quot;shootDuration&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="8190039176624653" type="hand">
+                        <action id="-13" name="Set boolean" sid="8190039176624653" type="mjolnir">
                             <param id="0" name="Instance variable">goesBack</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -104,12 +107,12 @@
                         <condition id="2" name="Mouse button is down" sid="869035187373247" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1426346599449296" type="hand">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1426346599449296" type="mjolnir">
                             <param id="0" name="Instance variable">goesBack</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-22" name="Set angle toward position" sid="6449196728705133" type="hand">
+                        <action id="-22" name="Set angle toward position" sid="6449196728705133" type="mjolnir">
                             <param id="0" name="X">Mouse.X</param>
                             <param id="1" name="Y">Mouse.Y</param>
                         </action>
@@ -117,12 +120,12 @@
                 </event-block>
                 <event-block sid="4888461170739408">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="473261890937037" type="hand">
+                        <condition id="-8" name="Is boolean instance variable set" sid="473261890937037" type="mjolnir">
                             <param id="0" name="Instance variable">goesBack</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-22" name="Set angle toward position" sid="8730749530577189" type="hand">
+                        <action id="-22" name="Set angle toward position" sid="8730749530577189" type="mjolnir">
                             <param id="0" name="X">hero.X</param>
                             <param id="1" name="Y">hero.Y</param>
                         </action>
@@ -130,21 +133,24 @@
                     <sub-events>
                         <event-block sid="9099551550371331">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="1501496544162581" type="hand">
+                                <condition id="1" name="Is overlapping another object" sid="1501496544162581" type="mjolnir">
                                     <param id="0" name="Object">hero</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="360982217644486" type="hand">
+                                <action id="-13" name="Set boolean" sid="360982217644486" type="mjolnir">
                                     <param id="0" name="Instance variable">goesBack</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="3051866831545475" type="hand">
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="3051866831545475" type="mjolnir">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action behavior="Pin" id="0" name="Pin to object" sid="4557738147714634" type="hand">
+                                <action behavior="Pin" id="0" name="Pin to object" sid="4557738147714634" type="mjolnir">
                                     <param id="0" name="Pin to">hero</param>
                                     <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="8792011386622526" type="mjolnir">
+                                    <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -224,12 +230,12 @@
                 </event-block>
                 <event-block sid="710390248572618">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="7183248190877136" type="hand">
+                        <condition id="0" name="On collision with another object" sid="7183248190877136" type="mjolnir">
                             <param id="0" name="Object">enemy</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="CustomMovement" id="10" name="Push out solid" sid="393469378050644" type="hand">
+                        <action behavior="CustomMovement" id="10" name="Push out solid" sid="393469378050644" type="mjolnir">
                             <param id="0" name="Direction">0</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="8478270617336649" type="enemy">
@@ -241,7 +247,7 @@
                             <param id="0" name="Instance variable">health</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-13" name="Set boolean" sid="3420210299607512" type="hand">
+                        <action id="-13" name="Set boolean" sid="3420210299607512" type="mjolnir">
                             <param id="0" name="Instance variable">goesBack</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -296,7 +302,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="3995737576619985" title="AI">
+        <event-group description="" sid="3995737576619985" title="AI">
             <sub-events>
                 <event-block sid="9209215825858468">
                     <conditions>
@@ -343,7 +349,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="8131948627658152" title="Moar Controls">
+        <event-group description="" sid="8131948627658152" title="Moar Controls">
             <sub-events>
                 <event-block sid="9680383298334386">
                     <conditions>
@@ -400,7 +406,7 @@
                 <event-block sid="7246876501838843">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="8500421934669825" type="System">
-                            <param id="0" name="Interval (seconds)">random(1,2)</param>
+                            <param id="0" name="Interval (seconds)">random(2,4)</param>
                         </condition>
                         <condition id="-16" name="Pick random instance" sid="3954322035125313" type="System">
                             <param id="0" name="Object">Sprite</param>
@@ -416,5 +422,6 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="8157179716747351" title="Meelee" />
     </events>
 </c2eventsheet>

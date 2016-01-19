@@ -8,7 +8,7 @@
     <author-website></author-website>
     <app-id></app-id>
     <unique-id>2qpiupr2gjili</unique-id>
-    <saved-with-version>16300</saved-with-version>
+    <saved-with-version>22100</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -43,6 +43,7 @@
         <height>320</height>
     </window-size>
     <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">No</prop>
@@ -56,7 +57,7 @@
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">All devices</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder>
         <object-type name="TiledBackground" sid="3206956448522659">
             <plugin id="TiledBg" />
             <texture />
@@ -101,7 +102,7 @@
                     <behavior id="Flash" />
                 </behavior-type>
             </behaviors>
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4990949389678758" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
@@ -138,7 +139,7 @@
                     <behavior id="custom" />
                 </behavior-type>
             </behaviors>
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7719233362950803" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
@@ -155,7 +156,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="hand" sid="4161131949791382">
+        <object-type name="mjolnir" sid="4161131949791382">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="goesBack" sid="8301626770954687" type="boolean" />
@@ -181,7 +182,7 @@
                     <behavior id="custom" />
                 </behavior-type>
             </behaviors>
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7338027823190688" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
@@ -220,18 +221,21 @@
         </object-type>
         <object-type name="Sprite" sid="7050378390213217">
             <plugin id="Sprite" />
-            <animation-folder expanded="1">
+            <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7366674461115044" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Text2" sid="6744077879201724">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
-    <layout-folder expanded="1">
+    <layout-folder>
         <layout>Layout 1.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
@@ -252,6 +256,7 @@
             <properties>
                 <timescale-audio>Off</timescale-audio>
                 <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
                 <positioned-audio></positioned-audio>
                 <panning-model>HRTF</panning-model>
                 <distance-model>Inverse</distance-model>
@@ -259,16 +264,14 @@
                 <reference-distance>600</reference-distance>
                 <maximum-distance>10000</maximum-distance>
                 <roll-off-factor>1</roll-off-factor>
-                <speed-of-sound>5000</speed-of-sound>
-                <doppler-factor>1</doppler-factor>
             </properties>
         </global-instance>
         <global-instance type="Browser" uid="7" />
     </global-instances>
-    <sounds-folder expanded="1" />
-    <music-folder expanded="1" />
-    <files-folder expanded="0">
-        <file-folder expanded="0" name="Icons">
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
             <file name="icon-16.png" />
             <file name="icon-32.png" />
             <file name="icon-114.png" />
