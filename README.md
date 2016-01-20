@@ -1,3 +1,3 @@
-Physt
+Throg
 ===== 
-made for 3 hour game jam (and totally not finished)..
+ARPG featuring a Frog who wants to become the new thunder god.
